@@ -1,0 +1,2 @@
+BASE_ENDPOINT = 'api.growbinar.com'
+LOGIN_ENDPOINT = '/login'
