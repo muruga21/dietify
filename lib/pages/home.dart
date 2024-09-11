@@ -10,38 +10,6 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         // backgroundColor: Colors.black,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text("",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontFamily: "Roboto",
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.2,
-                  )),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(100.0),
-                child: Image.asset(
-                  'assets/logo.jpg',
-                  width: 50,
-                  height: 50,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ],
-          ),
-          leading: IconButton(
-            // color: Colors.white,
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.of(context).pop(); // This will navigate back
-            },
-          ),
-        ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -69,7 +37,44 @@ class Home extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // const SizedBox(height: 20),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: const Image(
+                            image: AssetImage("assets/logo.jpg"),
+                            width: 70,
+                            height: 70,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        // const Column(
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   children: [
+                        //     Text("Hello,",
+                        //         style: TextStyle(
+                        //           // color: Colors.white,
+                        //           fontSize: 12,
+                        //           fontFamily: "Roboto",
+                        //           fontWeight: FontWeight.bold,
+                        //           letterSpacing: 1.2,
+                        //         )),
+                        //     Text("John Doe",
+                        //         style: TextStyle(
+                        //           // color: Colors.white,
+                        //           fontSize: 20,
+                        //           fontFamily: "Roboto",
+                        //           fontWeight: FontWeight.bold,
+                        //           letterSpacing: 1.2,
+                        //         )),
+                        //   ],
+                        // ),
+                      ],
+                    ),
+                    // const SizedBox(height: 20),984
                     const Text("Track Your",
                         style: TextStyle(
                           // color: Colors.white,
@@ -120,10 +125,157 @@ class Home extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
+                      padding: const EdgeInsets.all(16),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(250, 0, 0, 0),
+                        border: Border.all(
+                          width: 0.5,
+                          color: const Color(0xC0C0C0C0),
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                "Your",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontFamily: "Roboto",
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.2,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(
+                                  width: 8), // Space between the two words
+                              Text(
+                                "Progress",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontFamily: "Roboto",
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.2,
+                                  color: Colors.orange[
+                                      800], // Orange color for "Progress"
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 15),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Protein",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: "Roboto",
+                                      letterSpacing: 1.2,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    "0.8",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Roboto",
+                                      letterSpacing: 1.2,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Fat",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: "Roboto",
+                                      letterSpacing: 1.2,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    "0.8",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Roboto",
+                                      letterSpacing: 1.2,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Fiber",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: "Roboto",
+                                      letterSpacing: 1.2,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    "0.8",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: "Roboto",
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1.2,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Calories",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: "Roboto",
+                                      letterSpacing: 1.2,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    "0.8",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Roboto",
+                                      letterSpacing: 1.2,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        // color: const Color(0xF5F5F6F7),
+                        color: const Color(0x0C0C0C0C),
                         border: Border.all(
                             color: const Color.fromARGB(86, 180, 180, 180)),
                         borderRadius: BorderRadius.circular(10),
@@ -248,144 +400,6 @@ class Home extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(99, 243, 243, 243),
-                        border: Border.all(
-                          width: 0.5,
-                          color: const Color(0xC0C0C0C0),
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              const Text(
-                                "Your",
-                                style: TextStyle(
-                                  fontSize: 28,
-                                  fontFamily: "Roboto",
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1.2,
-                                ),
-                              ),
-                              const SizedBox(
-                                  width: 8), // Space between the two words
-                              Text(
-                                "Progress",
-                                style: TextStyle(
-                                  fontSize: 28,
-                                  fontFamily: "Roboto",
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1.2,
-                                  color: Colors.orange[
-                                      800], // Orange color for "Progress"
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 15),
-                          const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Protein",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontFamily: "Roboto",
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
-                                  Text(
-                                    "0.8",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "Roboto",
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Fat",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontFamily: "Roboto",
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
-                                  Text(
-                                    "0.8",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "Roboto",
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Fiber",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontFamily: "Roboto",
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
-                                  Text(
-                                    "0.8",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontFamily: "Roboto",
-                                      fontWeight: FontWeight.bold,
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Calories",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontFamily: "Roboto",
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
-                                  Text(
-                                    "0.8",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "Roboto",
-                                      letterSpacing: 1.2,
-                                    ),
-                                  ),
-                                ],
                               ),
                             ],
                           )
