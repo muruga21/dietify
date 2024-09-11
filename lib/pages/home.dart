@@ -109,7 +109,7 @@ class Home extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              // const SizedBox(height: 10),
               Container(
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 width: double.infinity,
