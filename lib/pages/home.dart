@@ -1,38 +1,21 @@
+import 'package:dietfy/containers/bottom_nav_bar.dart';
+import 'package:dietfy/main.dart';
+import 'package:dietfy/pages/dietplan.dart';
+import 'package:dietfy/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var currentPage = context.watch<CurrentPage>();
+
     return Scaffold(
         // backgroundColor: Colors.black,
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: BottomNavigationBar(
-              backgroundColor: Colors.black,
-              unselectedItemColor: Colors.white,
-              selectedItemColor: Colors.blue,
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.search),
-                  label: 'Search',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  label: 'Profile',
-                ),
-              ],
-            ),
-          ),
-        ),
+        bottomNavigationBar: const BottomNavBar(),
         body: Expanded(
           child: SingleChildScrollView(
               child: Column(
