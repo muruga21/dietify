@@ -1,9 +1,5 @@
 ![image](https://github.com/user-attachments/assets/5a754b17-d3fe-4085-9257-5e841b88c5f1)
 
-
-# Let's create the README.md file based on the provided content
-
-readme_content = """
 # Dietify - Personalized Diet Plan App
 
 **Dietify** is a personalized diet platform that recommends customized meal plans based on users' dietary preferences, genetic information, and personal health data. It helps users track their food intake, monitor nutrients, and improve their health by following tailored diet plans.
