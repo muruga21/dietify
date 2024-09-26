@@ -77,7 +77,7 @@ class Home extends StatelessWidget {
                       children: [
                         Text("Nutritional",
                             style: TextStyle(
-                              fontSize: 34,
+                              fontSize: 30,
                               fontFamily: "Roboto",
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1.2,
@@ -89,7 +89,7 @@ class Home extends StatelessWidget {
                         const Text("Progress",
                             style: TextStyle(
                               // color: Colors.white,
-                              fontSize: 34,
+                              fontSize: 30,
                               fontFamily: "Roboto",
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1.2,
@@ -403,7 +403,7 @@ class Home extends StatelessWidget {
                       children: [
                         Container(
                           padding: const EdgeInsets.all(16),
-                          width: 180,
+                          width: 170,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(28, 239, 108, 0),
                             border: Border.all(
@@ -440,7 +440,7 @@ class Home extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(16),
-                          width: 180,
+                          width: 160,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(209, 124, 90, 217)
                                 .withOpacity(0.1),

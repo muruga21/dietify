@@ -17,6 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  file_picker: ^5.0.0  # Check for the latest version
 
 flutter:
   assets:

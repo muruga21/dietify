@@ -2,6 +2,7 @@ import 'package:dietfy/containers/details_upper_card.dart';
 import 'package:dietfy/main.dart';
 import 'package:dietfy/pages/home.dart';
 import 'package:dietfy/pages/login.dart';
+import 'package:file_picker/file_picker.dart'; // Import the file_picker package
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +24,7 @@ class Details extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.535,
+                  height: MediaQuery.of(context).size.height * 0.575,
                   padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
                     color: Colors.white,
@@ -43,14 +44,12 @@ class Details extends StatelessWidget {
                           focusedBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                                 color: Colors.blue, width: 2.0),
-                            borderRadius: BorderRadius.circular(
-                                12.0), // Consistent radius when focused
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                                 color: Colors.grey, width: 1.0),
-                            borderRadius: BorderRadius.circular(
-                                12.0), // Consistent radius when enabled
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                           contentPadding: const EdgeInsets.symmetric(
                               horizontal: 18.0, vertical: 18.0),
@@ -65,39 +64,59 @@ class Details extends StatelessWidget {
                           focusedBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                                 color: Colors.blue, width: 2.0),
-                            borderRadius: BorderRadius.circular(
-                                12.0), // Consistent radius when focused
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                                 color: Colors.grey, width: 1.0),
-                            borderRadius: BorderRadius.circular(
-                                12.0), // Consistent radius when enabled
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                           contentPadding: const EdgeInsets.symmetric(
                               horizontal: 18.0, vertical: 18.0),
                         ),
                       ),
                       const SizedBox(height: 20),
-                      TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Genetic syndrom',
-                          prefixIcon: const Icon(Icons.medical_services),
-                          border: const OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Colors.blue, width: 2.0),
-                            borderRadius: BorderRadius.circular(
-                                12.0), // Consistent radius when focused
+                      // Replace the Genetic Syndrome TextField with a file picker
+                      TextButton(
+                        onPressed: () async {
+                          // Handle file selection
+                          FilePickerResult? result =
+                              await FilePicker.platform.pickFiles(
+                            allowMultiple: false,
+                            type: FileType.custom,
+                            allowedExtensions: [
+                              'pdf',
+                              'doc',
+                              'docx'
+                            ], // Specify allowed file types
+                          );
+
+                          if (result != null) {
+                            // Handle the selected file
+                            String filePath = result.files.single.path!;
+                            // You can also store this path or perform any action you need
+                          }
+                        },
+                        child: InputDecorator(
+                          decoration: InputDecoration(
+                            labelText: 'Report',
+                            prefixIcon: const Icon(Icons.upload_file),
+                            border: const OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.blue, width: 2.0),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: Colors.grey, width: 1.0),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
                           ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Colors.grey, width: 1.0),
-                            borderRadius: BorderRadius.circular(
-                                12.0), // Consistent radius when enabled
+                          child: const Text(
+                            'Select a file',
+                            style: TextStyle(color: Colors.black54),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 18.0, vertical: 18.0),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -143,7 +162,7 @@ class Details extends StatelessWidget {
                         },
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 150, vertical: 15),
+                              horizontal: 130, vertical: 15),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
