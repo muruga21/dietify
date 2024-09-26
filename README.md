@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/5a754b17-d3fe-4085-9257-5e841b88c5f1)
+
+
 # Let's create the README.md file based on the provided content
 
 readme_content = """
